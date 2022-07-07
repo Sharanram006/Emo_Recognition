@@ -12,7 +12,7 @@ def main():
         )
             
     if selected_box == 'Emotion Recognition':        
-        st.sidebar.success('To try by yourself by adding a audio file .')
+        st.sidebar.success('Add a audio file to test the app and ignore if any error pops up.')
         application()
     if selected_box=='view source code':
         st.code(get_file_content_as_string("app.py"))
