@@ -12,21 +12,14 @@ def main():
     #print(cv2.__version__)
     selected_box = st.sidebar.selectbox(
         'Choose an option..',
-        ('Emotion Recognition','view source code')
+        ('Emotion Recognition')
         )
             
     if selected_box == 'Emotion Recognition':        
         st.sidebar.success('To try by yourself by adding a audio file .')
         application()
-    if selected_box=='view source code':
-        st.code(get_file_content_as_string("app.py"))
+   
 
-@st.cache(show_spinner=False)
-def get_file_content_as_string(path):
-    url = 'https://raw.githubusercontent.com/Sharanram006/Emo_Recognition/main/' + path
-    response = urllib.request.urlopen(url)
-    return response.read().decode("utf-8")
-    
 @st.cache(show_spinner=False)
 def load_model():
     model=tf.keras.models.load_model('mymodel.h5')
